@@ -1,11 +1,18 @@
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
+import { SafeAreaView, View, Text, Button } from 'react-native';
+
+const number = 55;
 
 const First = (props) => {
     return(
         <SafeAreaView>
             <View>
-                <Text> hi</Text>
+                <Text style={{fontSize:50}}> First</Text>
+                <Text style={{fontSize:50}}> {number}</Text>
+                <Button
+                    title="Go!"
+                    onPress={() => props.navigation.navigate('SecondPage',{ myNumber:number})}
+                />
             </View>
         </SafeAreaView>
     )
